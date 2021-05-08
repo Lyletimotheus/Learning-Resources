@@ -1,5 +1,5 @@
 MVC Model
-            DATABASE
+---------DATABASE----------
     |                   |
     |                   |
     |                   |
@@ -19,3 +19,9 @@ DESTRUCTOR
 --------------------
 - Used to clean up objects or close off database connections.
 - Just use the unset() function to delete objects.
+
+------------------------------
+STATIC PROPERTIES AND METHODS
+------------------------------
+- Static properties or method: Do I need to call this property or method first without creating a object?
+- These properties and methods don't have to be part of an object.

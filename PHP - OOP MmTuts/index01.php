@@ -11,9 +11,14 @@ require_once "includes01/Person.inc.php";
 </head>
 <body>
     <?php
-        $person01 = new Person("John", "Blue", 28);
-        echo $person01 -> getName();
+    //Accessing static properties and methods below:
+        // echo Person::$drinkingAge;
+        // Person::setNewDrinkingAge(16);
+        // echo Person::$drinkingAge; 
+    $person = new Person("John", "Yellow", 45);
+    echo $person -> getDrinkingAge();
 
+    
     ?>
 </body>
 </html>
