@@ -8,8 +8,14 @@ CONTROLLER              VIEW
 # This is the way we will structure the directory.
 
 ---------------------
-PROPERTIES
+PROPERTIES & METHODS
 ---------------------
 - Private properties can only be accessed from inside the class.
 - Public properties and methods can be accessed globally.
 - Protected properties and methods can only be accessed from a inherited class.
+
+--------------------
+DESTRUCTOR
+--------------------
+- Used to clean up objects or close off database connections.
+- Just use the unset() function to delete objects.
