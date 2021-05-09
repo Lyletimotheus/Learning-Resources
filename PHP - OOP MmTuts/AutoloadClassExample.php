@@ -1,5 +1,4 @@
 <?php include_once 'includes03/autoloader.inc.php' ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
 </head>
 <body>
     <?php
-        $person1 = new Person\Person("John", 34);
+        $person1 = new Person\Person("John", 34); //Making reference to the namespace Person
         echo $person1 -> getPerson();
     ?>
 </body>

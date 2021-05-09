@@ -1,11 +1,14 @@
-MVC Model
+#########################
+######  MVC Model #######
+#########################
+
 ---------DATABASE----------
     |                   |
     |                   |
     |                   |
 CONTROLLER              VIEW
 
-# This is the way we will structure the directory.
+# This is the way we will structure the directory, using the MVC model.
 
 ---------------------
 PROPERTIES & METHODS
@@ -14,9 +17,9 @@ PROPERTIES & METHODS
 - Public properties and methods can be accessed globally.
 - Protected properties and methods can only be accessed from a inherited class.
 
---------------------
+----------
 DESTRUCTOR
---------------------
+----------
 - Used to clean up objects or close off database connections.
 - Just use the unset() function to delete objects.
 
@@ -26,10 +29,10 @@ STATIC PROPERTIES AND METHODS
 - Static properties or method: Do I need to call this property or method first without creating a object?
 - These properties and methods don't have to be part of an object.
 
----------------------
+-----------------
 TYPE DECLARATIONS
----------------------
-- When you want the variable to be strict use the followig function: declare(strict_types = 1);
+-----------------
+- When you want the variable to be strict use the following function: declare(strict_types = 1);
 - By using type declaration, we can throw an error if wrong type is given!
 Works without:
     - class/interface names 
@@ -42,3 +45,8 @@ Works without:
     - string
     - iterable
     - object 
+
+-------------------------
+SCOPE RESOLUTION OPERATOR
+-------------------------
+- Scope Resolution Operator (::)
