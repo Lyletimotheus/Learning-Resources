@@ -25,3 +25,20 @@ STATIC PROPERTIES AND METHODS
 ------------------------------
 - Static properties or method: Do I need to call this property or method first without creating a object?
 - These properties and methods don't have to be part of an object.
+
+---------------------
+TYPE DECLARATIONS
+---------------------
+- When you want the variable to be strict use the followig function: declare(strict_types = 1);
+- By using type declaration, we can throw an error if wrong type is given!
+Works without:
+    - class/interface names 
+    - self (used to reference to same class)
+    - array
+    - callable
+    - bool
+    - float
+    - int 
+    - string
+    - iterable
+    - object 
