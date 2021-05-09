@@ -50,3 +50,8 @@ Works without:
 SCOPE RESOLUTION OPERATOR
 -------------------------
 - Scope Resolution Operator (::)
+
+-----------------------
+INTERFACES
+-----------------------
+- Interfaces is a blueprint to group specific classes and we tell them how they should behave.
