@@ -1,0 +1,15 @@
+---------------------
+What does Laravel do?
+---------------------
+- Route Handling
+- Security Layer
+- Models & DB Migrations (Artisian Tool)
+- Views/Templates
+- Authentication
+- Sessions
+- Compie Assets 
+- Storage & File Management [File uploading]
+- Error Handling
+- Unit Testing
+- Email & Config [Verification Emails]
+- Cache Handling
