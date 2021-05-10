@@ -1,6 +1,6 @@
 # Laravel Tutorial - Traversy Media
 
-### Course offered by Travesy Media on his YouTube channel. 
+### Course offered by [Travesy Media](https://www.youtube.com/watch?v=EU7PRmCpx-0&list=PLillGF-RfqbYhQsN5WMXy6VsDMKGadrJ-) on his YouTube channel. 
 
 #### Topics Covered in this series
 1. Environment Setup
