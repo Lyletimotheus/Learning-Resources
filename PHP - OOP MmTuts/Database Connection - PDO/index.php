@@ -11,8 +11,13 @@
 </head>
 <body>
     <?php
-        $testObj = new Test();
-        $testObj -> setUsers("Carlos", "carlos@gmail.com");
+    // Here we show the user with the name Lyle
+        $usersObj = new UsersView();
+        $usersObj -> showUser("Lyle");
+
+    // Here we add a user with the name Justine
+        // $newUser = new UsersContr();
+        // $newUser -> createUser("Justine", "justine@gmail.com");
     ?>
 </body>
 </html>
