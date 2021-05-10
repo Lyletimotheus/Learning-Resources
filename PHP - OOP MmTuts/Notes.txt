@@ -55,3 +55,8 @@ SCOPE RESOLUTION OPERATOR
 INTERFACES
 -----------------------
 - Interfaces is a blueprint to group specific classes and we tell them how they should behave.
+
+-------------------------
+Anonymous Class
+-------------------------
+- Does not store the class in memory and gets deleted once we store it to our object
