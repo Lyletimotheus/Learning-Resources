@@ -18,3 +18,8 @@ What does Laravel do?
 CREATING A NEW LARAVEL PROJECT
 ------------------------------
 - composer create-project laravel/laravel [The name of the application]
+
+---------------------------------
+CREATING A CONTROLLER VIA ARTISAN
+---------------------------------
+- php artisan make:controller PageController
