@@ -72,3 +72,10 @@ Artisan Commands
 --------------------------
 - php artisan make:controller (NAME OF THE CONTROLLER) ----> Creates a controller class in Laravel
 - php artisan make:controller (NAME OF THE CONTROLLER) --force  -----> Will override the current controller class if it already exists
+
+----------------------
+Returning Views 
+----------------------
+1. Compact Method
+2. With method [Best suited if you want to pass in one variable]
+** Both examples are explained in the ProductsController.php file located in the Controllers folder
