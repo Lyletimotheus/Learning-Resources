@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route that sends back a view
-Route::get('/', function () {
-    return view('home');
-});
+// Laravel 8 (New Way)
+ Route::get('/products', [ProductsController::class, 'index']);
+ Route::get('/products/about', [ProductsController::class, 'about']);
 
+//Laravel 8 (Also New Way)
+Route::get('/products', 'App\Http\Controllers\ProductsController@index' );
+
+// Before Laravel 8
+Route::get('/products', 'ProductsController@index');
 
 
 
@@ -63,4 +68,21 @@ Route::get('/users', function (){
  });
 
  ************************************       END         ***********************************
+
+*****************************
+Ways to do routing
+
+*****************************
+// Laravel 8 (New Way)
+ Route::get('/products', [ProductsController::class, 'index']);
+ Route::get('/products/about', [ProductsController::class, 'about']);
+
+//Laravel 8 (Also New Way)
+Route::get('/products', 'App\Http\Controllers\ProductsController@index' );
+
+// Before Laravel 8
+Route::get('/products', 'ProductsController@index');
+
+
+
  */

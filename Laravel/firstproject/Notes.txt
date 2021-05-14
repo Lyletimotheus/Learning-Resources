@@ -66,3 +66,9 @@ App > Http > Controllers === Controllers
         - The vendor folder holds all the libraries we will use in our project.
         - Removing the composer.lock file (rm composer.lock) and reinstall it with composer install
         - Adding libraries into composer.json 
+
+--------------------------
+Artisan Commands
+--------------------------
+- php artisan make:controller (NAME OF THE CONTROLLER) ----> Creates a controller class in Laravel
+- php artisan make:controller (NAME OF THE CONTROLLER) --force  -----> Will override the current controller class if it already exists
