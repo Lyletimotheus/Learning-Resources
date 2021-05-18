@@ -82,3 +82,9 @@ Returning Views
 1. Compact Method
 2. With method [Best suited if you want to pass in one variable]
 ** Both examples are explained in the ProductsController.php file located in the Controllers folder
+
+-----------------------------
+Adding Images to your project
+-----------------------------
+- Inside the image tag in the HTML add Laravel {{  }} and use the URL method to the directory path of the location of the image files
+- EXAMPLE: <img class="img-team" src="{{ URL('images/team-section-home.jpg') }}" alt="">
