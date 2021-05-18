@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,25 +14,10 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
- Route::get('/products', [ProductsController::class, 'index']);
-
- //Pattern is an integer
-//  Route::get('/products/{id}', 
-//  [ProductsController::class, 'show'])->where('id', '[0-9]+');
-// Here we are only looking to pass integer variables with values of 0 or 9. The plus indicates that they can be double digits and not just single digits.
-
-//Pattern is an string
-  Route::get('/products/{name}', 
-  [ProductsController::class, 'show'])->where('name', '[a-zA-Z]+'); 
-// Here we are only to pass string variables into the URL which are a-z and A-Z.
+ Route::get('/',[PagesController::class, 'index']);
+ Route::get('/about', [PagesController::class, 'about']);
 
 
-// Passing in multiple parameters 
-    Route::get('/products/{name}/{id}', 
-    [ProductsController::class, 'show'])->where([
-        'name' => '[a-z]+',
-        'id' => '[0-9]+'
-    ]); 
   
  
 
@@ -126,4 +111,12 @@ Routing Parameters
     ]); 
 
     *********************************************           END             ******************************************************
- */
+    
+
+    **********************
+    Named Routes
+    *********************
+     Route::get('/', [PagesController::class, 'index']) -> name('products');
+                                                            ----------------
+    *********************************************           END             ***********************************************
+    */

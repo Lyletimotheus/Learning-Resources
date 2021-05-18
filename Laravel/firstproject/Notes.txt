@@ -45,6 +45,9 @@ App > Models === Models
 Resources > Views === Views
 App > Http > Controllers === Controllers
 
+**** The structure of our application will always be in the app folder or file but the actual content will be stored on the other files such as index, about, contact us pages etc.
+****
+
         -------------------------------------------
         1. Setting a custom domain name for testing
         -------------------------------------------
