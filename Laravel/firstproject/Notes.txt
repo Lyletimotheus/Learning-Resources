@@ -86,5 +86,12 @@ Returning Views
 -----------------------------
 Adding Images to your project
 -----------------------------
+    METHOD 1:
 - Inside the image tag in the HTML add Laravel {{  }} and use the URL method to the directory path of the location of the image files
 - EXAMPLE: <img class="img-team" src="{{ URL('images/team-section-home.jpg') }}" alt="">
+
+    METHOD 2: 
+- Using the command line -> php artisan storage:link (Create a folder named storage in the public directory) 
+- This is a more secure way of doing things and protecting your images -> adds a extra layer of security on your images 
+- You can use the URL() or the asset() methods when linking images.
+** The asset method specifically used for images, HTML, CSS, JS [Can only store the assets in the public folder when using the asset method].
