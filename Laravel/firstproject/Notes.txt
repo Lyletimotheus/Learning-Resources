@@ -95,3 +95,15 @@ Adding Images to your project
 - This is a more secure way of doing things and protecting your images -> adds a extra layer of security on your images 
 - You can use the URL() or the asset() methods when linking images.
 ** The asset method specifically used for images, HTML, CSS, JS [Can only store the assets in the public folder when using the asset method].
+
+-------------------------------
+Webpack.mix.js 
+-------------------------------
+- Here we compile mix.js('resources/js/app.js', 'public/js') the files from the left to the right handside
+
+-------------------------------
+Running nodejs
+-------------------------------
+- npm install ---> command line statement
+- npm run dev ---> to run the webpack.mix.js file (Once its completed you need to run the command again to activate it.)
+- npm run watch --> compile the css files  
