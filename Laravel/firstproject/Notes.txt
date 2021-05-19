@@ -114,3 +114,32 @@ How to pull in front-end presets
 *********************************
 - php artisan ui tailwindcss ----> command line terminal
 - npm install && npm run dev ----> compile a fresh scaffolding
+
+
+
+*********************************
+Creating a Model using Artisan
+*********************************
+- php artisan make:model (NAME OF THE MODEL)
+- php artisan make:migration create_posts_table ----> This will create a migration with the name create posts create_posts_table
+- php artisan make:model Post -m ----> This is a better way in creating a migration
+** NB ** The up method in the model migrates everything inside it and the down method will undo everything that has been migrated.
+- Creating tables for the database in the model file:
+            $table-> increments('id'); // A table with the name id will increase by one (Auto-Increment)
+            $table-> string('title'); // A table with the name title with a type of string
+            $table-> mediumText('body'); // A table with the name body with a type of mediumText
+            $table-> timestamps(); // A table with a default timestamp
+
+- Run the following command which will run the up command in all the model files: php artisan migrate
+- This command will keep track of which migration you have run or still need to run:
+    |------> php artisan migrate:install
+- This will call the down method in our migration   
+    |------> php artisan migrate:reset
+- This command will rollback to every database migration you've run on this instance and then runs every migration available. 
+    |------> php artisan migrate:refresh
+- This command drops all of your tables and then runs the up migration.
+    |------> php artisan migrate:fresh
+- This will command will rollback
+    |------> php artisan migrate:rollback
+- This command will show a table listing of every migration whether it has been run yet or not in the current environment.
+    |------> php artisan migrate:status
