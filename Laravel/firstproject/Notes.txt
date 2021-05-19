@@ -106,4 +106,11 @@ Running nodejs
 -------------------------------
 - npm install ---> command line statement
 - npm run dev ---> to run the webpack.mix.js file (Once its completed you need to run the command again to activate it.)
-- npm run watch --> compile the css files  
+- npm run watch --> compile the css files 
+
+
+*********************************
+How to pull in front-end presets
+*********************************
+- php artisan ui tailwindcss ----> command line terminal
+- npm install && npm run dev ----> compile a fresh scaffolding
