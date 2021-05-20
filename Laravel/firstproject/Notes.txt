@@ -143,3 +143,15 @@ Creating a Model using Artisan
     |------> php artisan migrate:rollback
 - This command will show a table listing of every migration whether it has been run yet or not in the current environment.
     |------> php artisan migrate:status
+
+------------------------------------------------
+Adding dummy data into our database - Factories
+------------------------------------------------
+- php artisan make:factory PostFactory -----> Creating a factory 
+- php artisan make:factory PostFactory --model=Post 
+*************
+Using Tinker
+*************
+- php artisan tinker ---> takes us to a new powwershell session
+- \App\Models\Post::factory()->create(); -------> This command will create fake dummy data for us
+- \App\Models\Post::factory()->count(2)->create(); -------> We can more then one row by calling a method of count and adding the number of rows we require
