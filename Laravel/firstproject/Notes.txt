@@ -264,5 +264,9 @@ Query Builder Functionality
         
         dd($posts); // Is like the var_dump or print_r function in PHP
 
+******************************************
+Eloquent : ORM - Object Relational Matter
+******************************************
+
 
 
