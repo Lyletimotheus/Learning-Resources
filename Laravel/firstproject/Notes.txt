@@ -270,3 +270,14 @@ Eloquent : ORM - Object Relational Matter
 
 
 
+*****************************************
+Installing Tailwindcss 
+*****************************************
+- npm install cross-env
+- npm install -and npm run dev
+- npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+- npx tailwindcss init
+- npm install 
+- npm run watch
+
+
