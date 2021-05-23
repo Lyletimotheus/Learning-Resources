@@ -75,7 +75,8 @@ Artisan Commands
 --------------------------
 - php artisan make:controller (NAME OF THE CONTROLLER) ----> Creates a controller class in Laravel
 - php artisan make:controller (NAME OF THE CONTROLLER) --force  -----> Will override the current controller class if it already exists
-
+- php artisan make:controller CarsController --resource -----> Laravel assigns the CRUD routes to the controller
+- php artisan route:list ----> All our endpoints for all of our methods in our Controller
 ----------------------
 Returning Views 
 ----------------------
@@ -107,15 +108,6 @@ Running nodejs
 - npm install ---> command line statement
 - npm run dev ---> to run the webpack.mix.js file (Once its completed you need to run the command again to activate it.)
 - npm run watch --> compile the css files 
-
-
-*********************************
-How to pull in front-end presets
-*********************************
-- php artisan ui tailwindcss ----> command line terminal
-- npm install && npm run dev ----> compile a fresh scaffolding
-
-
 
 *********************************
 Creating a Model using Artisan
@@ -157,7 +149,6 @@ THESE ARE ALL TERMINAL COMMANDS
 - \App\Models\Post::factory()->create(); -------> This command will create fake dummy data for us
 - \App\Models\Post::factory()->count(2)->create(); -------> We can more then one row by calling a method of count and adding the number of rows we require
 
-
 ----------------------------
 Query Builder Functionality
 ----------------------------
@@ -188,13 +179,13 @@ Query Builder Functionality
 
                 $id = 2;
 
-        // $posts = DB::table('posts') 
-        //         ->where('created_at', '>', now()->subDay())
-        //         ->orWhere('title', 'Mr.')
-        //         ->get();
-        //$posts = DB::table('posts') 
-        //        ->whereBetween('id', [2,3]) // Scope a query to return only rows where a column is between 2 values
-        //        ->get();
+        $posts = DB::table('posts') 
+                 ->where('created_at', '>', now()->subDay())
+                 ->orWhere('title', 'Mr.')
+                 ->get();
+        $posts = DB::table('posts') 
+                ->whereBetween('id', [2,3]) // Scope a query to return only rows where a column is between 2 values
+                ->get();
 
         // $posts = DB::table('posts') 
         //         ->whereNotNull('title') // Allows us to see if a column has a null/empty value
@@ -267,7 +258,7 @@ Query Builder Functionality
 ******************************************
 Eloquent : ORM - Object Relational Matter
 ******************************************
-
+- php artisan make:controller CarsController --resource ------> Creating CRUD methods in the controller 
 
 
 *****************************************
@@ -279,5 +270,6 @@ Installing Tailwindcss
 - npx tailwindcss init
 - npm install 
 - npm run watch
+
 
 
