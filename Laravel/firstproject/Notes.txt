@@ -271,5 +271,24 @@ Installing Tailwindcss
 - npm install 
 - npm run watch
 
+************************
+Eloquent Serialization
+************************
+- The process of converting an array into a string. 
+- Example:  $cars = Car::all()->toArray(); ------> The toArray() converts the array to a string, but it needs to be accessed as the following:
+{{ $car['name'] }}, from our index.blade file 
 
+- To return a JSON string we use $cars = Car::all()->toJson(); -----> The toJson() converts the array to a JSON string.
+- $cars = json_decode($cars); // Here we convert the JSON string into a object so we can iterate over it
+- Here we use the access operator to access the values of the JSON object ----> {{ $car->name}}
+- In our models we can blacklist or whitelist certain properties we don't want the user to see. Such as id's and passwords
+
+***********************
+Eloquent One To Many
+***********************
+- Eloquent Relationships: Understand this *NB*
+- We can create the migration in our current migration for example
+- Look at the latest migration in the migrations folder for the explanation code.
+- Under Models we have a Car.php = Shows are the cars and we have a CarModel.php which shows all the car models related to the cars in Car.php 
+- You need to first have data in your database before you add the data to the second table(car_model). Remember that the car_id in the car_models refers to the id in the car table.
 
