@@ -292,3 +292,6 @@ Eloquent One To Many
 - Under Models we have a Car.php = Shows are the cars and we have a CarModel.php which shows all the car models related to the cars in Car.php 
 - You need to first have data in your database before you add the data to the second table(car_model). Remember that the car_id in the car_models refers to the id in the car table.
 
+****************************************
+Eloquent hasmany and hasone relationship
+****************************************
