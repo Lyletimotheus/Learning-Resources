@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\Product;
+use App\Rules\Uppercase;
+use App\Http\Requests\CreateValidationRequest;
 
 class CarsController extends Controller
 {
@@ -65,15 +67,18 @@ class CarsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateValidationRequest $request)
     {
+        // --- WAY 2 ---
+        $validated = $request->validated();
 
-        // The validate method will validate incoming data to determine if it is true or not.
-        $request->validate([
-            'name'=> 'required|unique:cars', //Looks in the cars table to see if that name exist or not
-            'founded'=> 'required|integer|min:0|max:2021',// The data type has to be integer with a minimum value of 0 and maximum year of 2021
-            'description'=> 'required'
-        ]);
+        // The validate method will validate incoming data to determine if it is true or not. ---- WAY 1 ---
+        // $request->validate([
+        //     'name'=> new Uppercase,
+        //     //'name'=> 'required|unique:cars', //Looks in the cars table to see if that name exist or not
+        //     'founded'=> 'required|integer|min:0|max:2021',// The data type has to be integer with a minimum value of 0 and maximum year of 2021
+        //     'description'=> 'required'
+        // ]);
         //If it is valid it will proceed to creating a car below
         // If it's not valid, throw a ValidationException
 
@@ -128,14 +133,15 @@ class CarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateValidationRequest $request, $id)
     {
-        $car = Car::where('id', $id)
-            ->update([ 
-            'name' => $request->input('name'),
-            'founded' => $request->input('founded'),
-            'description' => $request->input('description')
-        ]);
+        $validated = $request->validated();
+        // $car = Car::where('id', $id)
+        //     ->update([ 
+        //     'name' => $request->input('name'),
+        //     'founded' => $request->input('founded'),
+        //     'description' => $request->input('description')
+        // ]);
 
         return redirect('/cars');
 

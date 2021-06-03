@@ -310,7 +310,16 @@ Eloquent Many To Many Relationship
 - We need to create a pivot table. Which is a table that connects to tables. 
 
 *********************
-Accessing the request
+Accessing the request - accepting request from the user
 *********************
 - Creating custom error messages 
 - Run the following command php artisan make:rule [THE NAME OF THE RULE]
+
+********************
+Form Requests
+********************
+- Revise this section.
+
+**********************
+Image Upload 
+**********************

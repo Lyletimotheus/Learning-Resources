@@ -25,7 +25,7 @@ class Uppercase implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        return strtoupper($value) === $value;
     }
 
     /**
@@ -35,6 +35,6 @@ class Uppercase implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'The :attribute must be uppercase'; //:attribute is the placeholder in your message for the attribute name
     }
 }
