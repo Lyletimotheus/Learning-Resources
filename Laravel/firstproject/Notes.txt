@@ -296,3 +296,8 @@ Eloquent One To Many
 Eloquent hasmany and hasone relationship
 ****************************************
 - Pulling in relationships of a relationship
+
+
+*******************
+hasOne relationship
+*******************
