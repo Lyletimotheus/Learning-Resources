@@ -23,12 +23,15 @@
                 </ul> --}}
                 <table class="table-auto">
                     <tr class="bg-blue-100">
-                        <th class="w-1/2 border-4 border-gray-500 ">
+                        <th class="w-1/4 border-4 border-gray-500 ">
                             Model
                         </th>  
-                        <th class="w-1/2 border-4 border-gray-500 ">
+                        <th class="w-1/4 border-4 border-gray-500 ">
                             Engine
                         </th>  
+                        <th class="w-1/4 border-4 border-gray-500 ">
+                            Production Date
+                        </th> 
                     </tr>
                     @forelse ($car->carModels as $model)
                         <tr>
@@ -42,11 +45,22 @@
                                     @endif
                                 @endforeach
                             </td>
+                            <td class="border-4 border-gray-500">
+                                {{ date('d-m-Y', strtotime($car->productionDate->created_at)) }}
+                            </td>
                         </tr>
                     @empty
                         <p>No car models found!</p>
                     @endforelse
                 </table>
+                <p class="text-left">
+                    Product types: 
+                    @forelse ($car->products as $product)
+                        {{ $product->name }}
+                    @empty
+                        <p>No car matching your query was found!</p>
+                    @endforelse
+                </p>
                 <hr class="mt-4 mb-8">
             </div>
         </div>

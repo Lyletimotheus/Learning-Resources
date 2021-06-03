@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Product;
 
 class CarsController extends Controller
 {
@@ -66,6 +67,16 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
+
+        // The validate method will validate incoming data to determine if it is true or not.
+        $request->validate([
+            'name'=> 'required|unique:cars', //Looks in the cars table to see if that name exist or not
+            'founded'=> 'required|integer|min:0|max:2021',// The data type has to be integer with a minimum value of 0 and maximum year of 2021
+            'description'=> 'required'
+        ]);
+        //If it is valid it will proceed to creating a car below
+        // If it's not valid, throw a ValidationException
+
         // Inserting a record into the database         --- WAY 1 --- [Passing in properties]
         // $car = new Car;
         // $car->name = $request->input('name');
@@ -93,7 +104,8 @@ class CarsController extends Controller
     public function show($id)
     {
         $car = Car::find($id);
-        
+        $products = Product::find($id);
+        print_r($products); 
         return view('cars.show')->with('car', $car);
     }
 

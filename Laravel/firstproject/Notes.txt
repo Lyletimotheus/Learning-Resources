@@ -301,3 +301,16 @@ Eloquent hasmany and hasone relationship
 *******************
 hasOne relationship
 *******************
+- Revise these eloquent relationships
+
+
+************************************
+Eloquent Many To Many Relationship
+************************************
+- We need to create a pivot table. Which is a table that connects to tables. 
+
+*********************
+Accessing the request
+*********************
+- Creating custom error messages 
+- Run the following command php artisan make:rule [THE NAME OF THE RULE]

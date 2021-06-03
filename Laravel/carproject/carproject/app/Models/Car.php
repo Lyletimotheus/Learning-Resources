@@ -34,5 +34,19 @@ class Car extends Model
             'model_id'//Foreign key on Engine table
         ); //Takes 2 Arguments (1. The name of the model and 2. The name of the intermediate model )
     }
+
+    //Define a has one through relationship
+    public function productionDate() {
+        return $this->hasOneThrough(
+            CarProductionDate::class,
+            CarModel::class,
+            'car_id',
+            'model_id'
+        ); // We need to pass in 2 arguments (1. The model we would like to access and 2.  )
+    }
+
+    public function products() {
+        return $this->belongsToMany(Product::class);
+    }
     
 }
