@@ -323,3 +323,6 @@ Form Requests
 **********************
 Image Upload 
 **********************
+- First ensure that our form is set to handle fle upload 
+- Create the input type that can handle file upload
+- php artisan make:migration add_image_to_cars_table (Here we are creating a migration to add the image path to the database table)

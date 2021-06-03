@@ -67,10 +67,40 @@ class CarsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateValidationRequest $request)
+    public function store(Request $request) // When we had a custom rule we created we Request with CreateValidationRequest
     {
+        // Methods we can use on $request
+        //guessExtenstion --> Will show us the extension type of the file
+        //getMimeType --> Will return the mime type of the uploaded file 
+        //store()
+        //asStore()
+        //storePublicly()
+        //move()
+        //getClientOriginalName() ---> Allowing the user to upload a image  under any name and then we change it into a unique name 
+        //getClientMimeType()
+        //guessClientExtension() ---> get the extension without the file name and dot
+        //getSize() ---> get the size of file
+        //getError() ---> returns a boolean value if the file is the correct extension type or not
+        //isValid()
+        $test = $request->file('image')->isValid();
+        
+        
+        $request->validate([
+            'name'=> 'required', 
+            'founded'=> 'required|integer|min:0|max:2021',
+            'description'=> 'required',
+            'image'=> 'required|mimes:jpg,png,jpeg|max:5048' // File size should always be in kilobytes
+        ]);
+
+        $newImageName = time() . '-' . $request->name . '.'  . $request->image->extension();
+        // 2. Now we store the image
+        // The move method takes 2 parameters(1. Location and 2. The name of the image )
+       $request->image->move(public_path('images'), $newImageName);
+      
+
+
         // --- WAY 2 ---
-        $validated = $request->validated();
+        // $validated = $request->validated();
 
         // The validate method will validate incoming data to determine if it is true or not. ---- WAY 1 ---
         // $request->validate([
@@ -93,7 +123,8 @@ class CarsController extends Controller
         $car = Car::create([ //We can replace create with make, but then we are going to have to run the save method to save it to the database
             'name' => $request->input('name'),
             'founded' => $request->input('founded'),
-            'description' => $request->input('description')
+            'description' => $request->input('description'),
+            'image_path' => $newImageName
         ]);
 
         return redirect('/cars');
