@@ -341,4 +341,10 @@ Basic Artisan Commands
 - php artisan cache:clear --> if we have file changes use this command(if our css is not loading on screen, clear the cache)
 - php artisan auth:clear-resets --> This command will clear all expired tokens in the database
 - php artisan key:generate ---> generate a random application encryption code that will be stored .env file
-- Creating sessions in our application
+- php artisan session:table ---> Creating sessions in our application 
+- php artisan view:clear ---> remove cached views 
+
+*********************************
+Authentication and Authorisation
+**********************************
+- php artisan ui tailwindcss --auth

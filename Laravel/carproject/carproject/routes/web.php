@@ -13,5 +13,9 @@ use App\Http\Controllers\CarsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::resource('o', [UserController::class]);
 Route::resource('/cars', CarsController::class);
+Auth::routes();
+
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
