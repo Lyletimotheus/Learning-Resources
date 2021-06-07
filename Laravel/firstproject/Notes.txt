@@ -326,3 +326,19 @@ Image Upload
 - First ensure that our form is set to handle fle upload 
 - Create the input type that can handle file upload
 - php artisan make:migration add_image_to_cars_table (Here we are creating a migration to add the image path to the database table)
+
+***********************
+Basic Artisan Commands
+***********************
+- php artisan list ---> list all the artisan Commands
+- php artisan clear-compiled ---> Acts like a cache run
+- php artisan down  --> places our application in maintenance mode so we can run migrations or updates to our application
+- php artisan up ----> puts the application back to live mode 
+- php artisan env ---> see the current application environment 
+- php artisan help ----> standard help / assistance
+- php artisan --env ---> every command we can use for env
+- php artisan optimize ---> optimize and clear the cache of the route and configuration files 
+- php artisan cache:clear --> if we have file changes use this command(if our css is not loading on screen, clear the cache)
+- php artisan auth:clear-resets --> This command will clear all expired tokens in the database
+- php artisan key:generate ---> generate a random application encryption code that will be stored .env file
+- Creating sessions in our application
