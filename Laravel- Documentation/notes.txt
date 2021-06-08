@@ -44,6 +44,17 @@ While in maintenance mode, Laravel will display the maintenance mode view for al
 To disable maintenance mode, use the up command 
     - php artisan up
 
+You may customize the default maintenance mode template by defining your own template at:
+    - resources/views/errors/503.blade.php
+    - php artisan down --redirect/errors/503
+Be sure to create the maintenance and store it in the correct folder in the views and call it  in web.php in the routes folder.
 |-------------------------------------------------------------
 |  2. Directory Structure
 |-------------------------------------------------------------
+
+# The Storage Directory
+The storage/app/public directory may be used to store user-generated files, such as profile avatars, that should be publicly accessible. You should create a symbolic link at public/storage which points to this directory. 
+    - You may create the link using the php artisan storage:link Artisan command.
+
+# The Listeners Directory
+The Listeners directory contains the classes that handle your events. Event listeners receieve an event instance and perform login in response to the event being fired. For example, a UserRegistered event might be handled by a SendWelcomeEmail listener. 
