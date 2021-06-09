@@ -58,3 +58,23 @@ The storage/app/public directory may be used to store user-generated files, such
 
 # The Listeners Directory
 The Listeners directory contains the classes that handle your events. Event listeners receieve an event instance and perform login in response to the event being fired. For example, a UserRegistered event might be handled by a SendWelcomeEmail listener. 
+
+|-------------------------------------------------------------
+|  3. Starter Kits
+|-------------------------------------------------------------
+
+# Installation of Laravel Breeze
+- curl -s https://laravel.build/example-app | bash
+- cd example-app
+- php artisan migrate
+
+Once you have created a new Laravel Application
+- composer require laravel/breeze --development
+- php artisan breeze:install
+- npm install
+- npm run dev 
+- php artisan migrate 
+Next we can navigate to your applications /login or /register URL's in the web browser. All of Breeze's routes are defined within the routes/auth.php file. 
+
+
+

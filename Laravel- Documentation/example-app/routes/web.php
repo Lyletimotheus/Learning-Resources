@@ -17,10 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/maintenance', function() {
-    return view('maintenance');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/errors/503', function() {
-    return view('503');
-});
+require __DIR__.'/auth.php';
