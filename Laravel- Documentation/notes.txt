@@ -101,5 +101,12 @@ When deploying your application to production, you should make sure that you run
 The debug option in the config/app.php configuration file determines how much information about an error is actually displayed to the user. By default, this option is set to respect the value of the APP_DEBUG environment variable, which is stored in your .env file. 
 In your production environment, this value should always be false. If the APP_DEBUG variable is set to true in production, you risk exposing sensitive configuration values to your application's end users.
 
+|-------------------------------------------------------------
+|  5. Request Lifecycle
+|------------------------------------------------------------
 
+#Lifecycle Overview
+The entry point for all requests to a laravel application is the public/index.php file. 
 
+# HTTP / Console Kernels
+The method signature for the HTTP kernel's handle method is quite simple: it receives a Request and returns a Response. Think of the kernel as being a big black box that represents your entire application. Feed it HTTP requests and it will return HTTP responses.
