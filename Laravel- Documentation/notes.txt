@@ -110,3 +110,6 @@ The entry point for all requests to a laravel application is the public/index.ph
 
 # HTTP / Console Kernels
 The method signature for the HTTP kernel's handle method is quite simple: it receives a Request and returns a Response. Think of the kernel as being a big black box that represents your entire application. Feed it HTTP requests and it will return HTTP responses.
+
+# Service Providers
+Are responsible for bootstrapping all of the frameworks's various components, such as database, queue, validation, and routing components. 
