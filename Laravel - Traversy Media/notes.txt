@@ -34,3 +34,4 @@ $this->validate($request, [
 |---------------------------------------------------
 | Using old session data to improve user experience
 |--------------------------------------------------
+- value="{{ old('name') }} ---> value attribute in the input field in HTML
