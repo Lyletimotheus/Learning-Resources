@@ -1,0 +1,36 @@
+|-------------------------------------------------
+| Creating a controller within a new subdirectory
+|-------------------------------------------------
+
+- php artisan make:controller NAME OF NEW FOLDER TO BE CREATED\\ NAME OF CONTROLLER
+
+
+|-------------------------------------------------
+| Creating a Route to chain onto
+|-------------------------------------------------
+
+- Route::get('/register', [RegisterController::class, 'index'] )->name('register');
+** Here above we are naming this route register. This way we can include it into our blade file with the route helper function.
+
+
+|---------------------------------------------------------------------------
+| Using the request object in a controller file to send data to the database
+|---------------------------------------------------------------------------
+- public function store(Request $request) {
+       dd($request->email);     
+    }
+
+|---------------------------------------------
+|Laravel's base controller - validate method
+|---------------------------------------------
+$this->validate($request, [
+            'name'=> 'required|max:255',
+            'username'=> 'required|alpha_num',
+            'email'=> 'required|max:255',
+            'password'=> 'required|confirmed',            
+        ]); 
+
+
+|---------------------------------------------------
+| Using old session data to improve user experience
+|--------------------------------------------------
