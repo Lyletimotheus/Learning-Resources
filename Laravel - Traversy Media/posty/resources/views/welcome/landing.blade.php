@@ -12,6 +12,6 @@
     <div class="flex justify-center mt-10 py-5">
         A place where you can write and post without being compared or judged!
     </div>
-    <a href="{{ route('register') }}">Register</a>
+    <a class="flex justify-center mt-10 py-5 hover:underline" href="{{ route('register') }}">Register</a>
 </body>
 </html>
