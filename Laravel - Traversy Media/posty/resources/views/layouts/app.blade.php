@@ -14,7 +14,7 @@
                 <a href="{{ route('welcome') }}" class="p-3">Home</a>
             </li>
             <li>
-                <a href="" class="p-3">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
             </li>
             <li>
                 <a href="" class="p-3">Post</a>
@@ -28,7 +28,10 @@
                     <a href="" class="p-3">Lyle Timotheus</a>
                 </li>
                 <li>
-                    <a href="{{ route('logout') }}" class="p-3">Logout</a>
+                    <form action="{{ route('logout') }}" method="POST" class="p-3 inline">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
                 </li>
             @endauth
 
