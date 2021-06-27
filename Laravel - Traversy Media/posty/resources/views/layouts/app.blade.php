@@ -28,13 +28,13 @@
                     <a href="" class="p-3">Lyle Timotheus</a>
                 </li>
                 <li>
-                    <a href="" class="p-3">Logout</a>
+                    <a href="{{ route('logout') }}" class="p-3">Logout</a>
                 </li>
             @endauth
 
             @guest
                 <li>
-                    <a href="" class="p-3">Login</a>
+                    <a href="{{ route('login') }}" class="p-3">Login</a>
                 </li>
                 <li>
                     <a href="{{ route('register') }}" class="p-3">Register</a>
