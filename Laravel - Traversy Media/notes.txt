@@ -36,3 +36,10 @@ $this->validate($request, [
 |--------------------------------------------------
 - value="{{ old('name') }} ---> value attribute in the input field in HTML
 - Basically when the user forgets to enter data for a certain input field and they submit the form. You still want their data to be saved on the page (Nothing should be lost!)
+
+|---------------------------------------------------
+| Process of setting up a controller 
+|--------------------------------------------------
+1. Create the controller using the artisan command
+2. Add the controller to the web.php and don't forget to import it 
+3. 
