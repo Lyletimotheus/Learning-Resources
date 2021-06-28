@@ -20,8 +20,8 @@ Route::get('/home', function() {
 })->name('home');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
-->name('dashboard')
-->middleware('auth');
+->name('dashboard');
+// ->middleware('auth');
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 

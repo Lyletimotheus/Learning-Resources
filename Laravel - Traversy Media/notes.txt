@@ -43,3 +43,20 @@ $this->validate($request, [
 1. Create the controller using the artisan command
 2. Add the controller to the web.php and don't forget to import it 
 3. 
+
+|---------------------------------------------------
+| Middleware
+|--------------------------------------------------
+Is used to prevent things from progressing to the next step or prevent modification.
+
+1. In the routes folder (web.php)
+Route::get('/dashboard', [DashboardController::class, 'index'])
+->name('dashboard');
+->middleware('auth');
+
+OR 
+
+2. Within the controller as a constructor
+public function __construct() {
+        $this->middleware(['auth']);
+    }
