@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
@@ -38,3 +39,5 @@ Route::post('/posts', [PostController::class, 'store']);
 
 Route::get('/', 'App\Http\Controllers\WelcomeController@index')->name('welcome');
 
+Route::post('/posts/{id}/likes', [PostLikeController::class, 'store'])->name('posts.likes');
+Route::post('/posts/{post}/likes', [PostLikeController::class, 'store'])->name('posts.likes'); // Using route model binding to achieve the same outcome above

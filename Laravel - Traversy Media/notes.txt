@@ -80,3 +80,9 @@ public function __construct() {
     return [
             'body' => $this->faker->sentence(20),
         ];
+
+|---------------------------------------------------
+| Creating a migration with the table
+|--------------------------------------------------
+
+- php artisan make:migration create_likes_table --create=likes
