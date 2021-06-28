@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index() {
-        $posts = Post::get(); // Return all data in the database in order - returns it as a collection in Laravel
+        //$posts = Post::get(); // Return all data in the database in order - returns it as a collection in Laravel
+        $posts = Post::paginate(2); // Pagination: takes one argument - number of items we want to display per page
+
         return view('posts.index', [
             'posts' => $posts // Passing down the post to our index views so that we can iterate over each post
         ]);
