@@ -68,3 +68,15 @@ public function __construct() {
 - php artisan make:model Post --help ----> This will give us a list of all the commands related to models and migrations
 - php artisan make:model Post -m ---> This will create a model and a migration
 - php artisan make:model Post -m -f ---> This will create a model and a migration as well as the factory. 
+
+|---------------------------------------------------
+| Using tinker to input fake data
+|--------------------------------------------------
+
+- php artisan tinker
+- define the models default state
+    Example in PostFactory.php: 
+    
+    return [
+            'body' => $this->faker->sentence(20),
+        ];
