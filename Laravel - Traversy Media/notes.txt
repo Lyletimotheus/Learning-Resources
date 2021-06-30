@@ -86,3 +86,11 @@ public function __construct() {
 |--------------------------------------------------
 
 - php artisan make:migration create_likes_table --create=likes
+
+
+|---------------------------------------------------
+| .env file
+|--------------------------------------------------
+- To use the eager loading make sure it is only used for the development and not production
+- Make sure in the .env file that APP_DEBUG = true to use it for development and set it to false once we go live
+- use composer to load it into the project: https://github.com/barryvdh/laravel-debugbar
