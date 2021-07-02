@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index() {
         //$posts = Post::get(); // Return all data in the database in order - returns it as a collection in Laravel
-        $posts = Post::with(['user', 'likes'])->paginate(20); // Pagination: takes one argument - number of items we want to display per page
+        $posts = Post::orderBy('created_at','desc')->with(['user', 'likes'])->paginate(20); // Pagination: takes one argument - number of items we want to display per page
 
         return view('posts.index', [
             'posts' => $posts // Passing down the post to our index views so that we can iterate over each post
@@ -29,6 +29,7 @@ class PostController extends Controller
     }
 
     public function destroy(Post $post) {
+        $this->authorize('delete', $post);  // Throws an exception and shows the error 403 view to users that want to delete other users posts
         $post->delete();
 
         return back();

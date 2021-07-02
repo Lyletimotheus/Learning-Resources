@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Like;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,10 +20,6 @@ class Post extends Model
         return $this->likes->contains('user_id', $user->id); //Laravel collection
     }
 
-    public function ownedBy() {
-
-    }
-    
     public function user() {
         return $this->belongsTo(User::class);
     }
