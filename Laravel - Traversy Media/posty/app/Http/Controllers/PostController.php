@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth'])->only(['store', 'destroy']); // This middleware only applies to store and destroy methods
+    }
     public function index() {
         //$posts = Post::get(); // Return all data in the database in order - returns it as a collection in Laravel
         $posts = Post::orderBy('created_at','desc')->with(['user', 'likes'])->paginate(20); // Pagination: takes one argument - number of items we want to display per page
