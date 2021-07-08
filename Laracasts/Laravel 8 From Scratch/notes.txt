@@ -2,3 +2,15 @@
 | Creating a custom error 404 response 
 ---------------------------------------
 - abort(404);
+
+|--------------------------------------
+| Caching in Laravel 
+---------------------------------------
+- cache()->remember("posts.{slug}", 1200, fn() => file_get_contents($path));
+
+Here we are caching the individual post page for 1200 seconds and calling the function to return the contents of that file 
+
+Another way of caching is using helper functions(addMinutes or addHours or addDays)
+- cache()->remember("posts.{slug}", now()-> addMinutes(20), function() use ($path) {
+    return file_get_contents($path);
+});
