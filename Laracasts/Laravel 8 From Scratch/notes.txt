@@ -14,3 +14,10 @@ Another way of caching is using helper functions(addMinutes or addHours or addDa
 - cache()->remember("posts.{slug}", now()-> addMinutes(20), function() use ($path) {
     return file_get_contents($path);
 });
+
+|-------------------------------------------------------------------
+| Laravel helper functions for finding the base path of directories  
+--------------------------------------------------------------------
+- resource_path();
+- base_path();
+- app_path();
