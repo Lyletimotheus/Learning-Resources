@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB; // When you want to write raw SQL statements include this file
 
 // The following resource methods need to be used
     // index() -> show list of posts
@@ -22,7 +24,26 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        // Use plain SQL to fetch all the post
+        // $posts = DB::select('SELECT * FROM posts');
+
+        // Fetch all the post in the DB
+        // $posts = Post::all();
+
+        // Return a single post using the where clause
+        // return Post::where('title', 'Post Two')->get();
+
+        // Here we return only one post
+        // $posts = Post::orderBy('title', 'desc')->take(1)->get();
+    
+        // Fetch post according to the title
+        // $posts = Post::orderBy('title', 'desc')->get();
+
+        // Paginate Results
+        $posts = Post::orderBy('title', 'desc')->paginate(1);
+
+        // 1. Return a view
+        return view('posts.index')->with('posts', $posts);
     }
 
     /**
@@ -54,7 +75,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        // Here we need to show the individual post
+        $post=Post::find($id);
+        return view('posts.show')->with('post', $post);
     }
 
     /**

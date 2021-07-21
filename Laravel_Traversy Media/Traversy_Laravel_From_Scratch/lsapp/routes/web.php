@@ -29,6 +29,7 @@ Route::get('/', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 Route::get('/services', [PagesController::class, 'services']);
 
+// Adding all the controllers as resources 
 Route::resource('posts', PostsController::class);
 
 
