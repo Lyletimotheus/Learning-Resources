@@ -1,0 +1,2 @@
+# Removing a specific package 
+composer remove vendor/package

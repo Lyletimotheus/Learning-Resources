@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB; // When you want to write raw SQL statements include this file
+// use Illuminate\Support\Facades\DB; // When you want to write raw SQL statements include this file
 
 // The following resource methods need to be used
     // index() -> show list of posts
@@ -40,7 +40,7 @@ class PostsController extends Controller
         // $posts = Post::orderBy('title', 'desc')->get();
 
         // Paginate Results
-        $posts = Post::orderBy('title', 'desc')->paginate(1);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         // 1. Return a view
         return view('posts.index')->with('posts', $posts);
@@ -53,7 +53,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -64,7 +64,19 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $this->validate($request, [
+           'title' => 'required',
+           'body' => 'required'
+       ]);
+       
+       // Create a new post using Tinker
+       $post = new Post;
+       $post->title = $request->input('title');
+       $post->body = $request->input('body');
+       $post->save();
+
+       // Redirect the user with a success message we created in the messages.blade.php 
+       return redirect('/posts')->with('success', 'Your post has been successfully created!');
     }
 
     /**

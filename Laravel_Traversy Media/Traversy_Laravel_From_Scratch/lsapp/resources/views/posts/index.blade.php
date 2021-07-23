@@ -9,7 +9,7 @@
                 <small> Written at: {{ $post->created_at }}</small>
             </div>
         @endforeach
-        {{ $posts->links() }}
+        {!! $posts->links() !!}
     @else
         <p>There are no posts!</p>
     @endif
