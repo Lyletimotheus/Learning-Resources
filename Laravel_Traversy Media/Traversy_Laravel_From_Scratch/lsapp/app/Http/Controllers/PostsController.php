@@ -100,7 +100,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post=Post::find($id);
+        return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -112,7 +113,20 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+        
+        // Create a new post using Tinker
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+ 
+        // Redirect the user with a success message we created in the messages.blade.php 
+        return redirect('/posts')->with('success', 'Your post has been successfully updated!');
+ 
     }
 
     /**
@@ -123,6 +137,9 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/posts')->with('success', 'Your post has been successfully removed!');
+
     }
 }
