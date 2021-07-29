@@ -8,6 +8,8 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
+                    <a href="/posts/create" class="btn btn-primary">Create Post</a>
+
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -15,6 +17,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <h3>Your Blog Post</h3>
                 </div>
             </div>
         </div>
