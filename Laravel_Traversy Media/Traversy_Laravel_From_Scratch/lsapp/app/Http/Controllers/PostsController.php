@@ -18,6 +18,17 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     * The user needs to be authenticated to access the create and edit URI's, but we add exceptions on in the form of an array to allow for certain views to be accessible
+     * @return void
+     */
+    public function __construct()
+    {
+        
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -102,6 +113,10 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post=Post::find($id);
+        //Check for correct user
+        if(auth()->user()->id !==$post->user_id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
         return view('posts.edit')->with('post', $post);
     }
 
@@ -139,6 +154,11 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        //Check for correct user
+        if(auth()->user()->id !==$post->user_id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
+        
         $post->delete();
         return redirect('/posts')->with('success', 'Your post has been successfully removed!');
 
