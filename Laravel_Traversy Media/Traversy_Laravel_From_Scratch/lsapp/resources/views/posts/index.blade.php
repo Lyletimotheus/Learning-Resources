@@ -6,7 +6,7 @@
         @foreach ($posts as $post)
             <div class="container-fluid">
                 <h3 class="navbar-brand"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
-                <small> Written at: {{ $post->created_at }}</small>
+                <small> Written at: {{ $post->created_at }} by, {{ $post->user->name }}</small>
             </div>
         @endforeach
         {!! $posts->links() !!}

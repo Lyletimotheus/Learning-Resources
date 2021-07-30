@@ -14,4 +14,9 @@ class Post extends Model
     public $primaryKey = 'id'; 
     // Creating timestamps -- By default it is set to true
     public $timeStamps = 'true';
+
+    // Creating a relationship -  A single post belongs to a user
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 }
