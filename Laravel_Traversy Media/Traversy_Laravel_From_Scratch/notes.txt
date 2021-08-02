@@ -1,2 +1,5 @@
 # Removing a specific package 
 composer remove vendor/package
+
+#Adding storage folder to the public folder
+php artisan storage:link
